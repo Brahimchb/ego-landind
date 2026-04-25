@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EGO x Trap King</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Cairo',sans-serif;
+background:#0b0b0b;
+color:white;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(180deg,#000,#111);
+}
+
+.hero h1{
+color:#FFD700;
+font-size:28px;
+}
+
+.hero p{
+opacity:0.8;
+}
+
+/* BUTTON */
+.btn{
+display:block;
+background:#FFD700;
+color:black;
+padding:15px;
+margin:15px auto;
+text-align:center;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+width:90%;
+}
+
+/* FOMO */
+.fomo{
+background:red;
+padding:10px;
+text-align:center;
+font-weight:bold;
+}
+
+/* SECTION */
+.section{
+padding:20px;
+max-width:500px;
+margin:auto;
+}
+
+.card{
+background:#151515;
+padding:15px;
+border-radius:12px;
+margin:10px 0;
+}
+
+/* FORM */
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:10px;
+border:none;
+}
+
+/* PRICE */
+.price{
+color:#FFD700;
+font-size:24px;
+text-align:center;
+}
+
+/* STICKY */
+.sticky{
+position:fixed;
+bottom:0;
+width:100%;
+background:#FFD700;
+color:black;
+text-align:center;
+padding:15px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>🔥 عطر EGO × Trap King</h1>
+<p>العطر لي يخليك تبان وتخلي أثر وين تروح 😎</p>
+<a href="#form" class="btn">اطلب الآن</a>
+</div>
+
+<div class="fomo">
+🚨 راهو يڨطع - الكمية محدودة
+</div>
+
+<div class="section">
+
+<div class="card">
+<h3>✨ المميزات</h3>
+<p>✔️ ثبات طويل</p>
+<p>✔️ ريحة فخمة وجذابة</p>
+<p>✔️ ستايل شبابي عصري</p>
+</div>
+
+<div class="card">
+<h3>💰 السعر</h3>
+<p class="price">6700 دج</p>
+<p style="text-align:center;">🚚 توصيل 58 ولاية</p>
+</div>
+
+<div class="card">
+<h3>🔥 عرض خاص</h3>
+<p>✔️ زوج عطور = 11200 دج</p>
+<p>✔️ + Mini parfum بسعر خاص</p>
+</div>
+
+<h2 id="form">📝 اطلب الآن</h2>
+
+<form onsubmit="sendOrder(event)">
+
+<input type="text" id="name" placeholder="الاسم الكامل" required>
+<input type="tel" id="phone" placeholder="رقم الهاتف" required>
+
+<select id="wilaya" required>
+<option value="">اختر الولاية</option>
+<option>01 Adrar</option>
+<option>02 Chlef</option>
+<option>03 Laghouat</option>
+<option>04 Oum El Bouaghi</option>
+<option>05 Batna</option>
+<option>06 Béjaïa</option>
+<option>07 Biskra</option>
+<option>08 Béchar</option>
+<option>09 Blida</option>
+<option>10 Bouira</option>
+<option>16 Alger</option>
+<option>19 Sétif</option>
+<option>21 Skikda</option>
+<option>25 Constantine</option>
+<option>31 Oran</option>
+<option>... أكمل الباقي إذا حبيت ...</option>
+</select>
+
+<textarea id="address" placeholder="العنوان بالتفصيل" required></textarea>
+
+<label>
+<input type="checkbox" id="upsell">
+🔥 نحب نزيد mini parfum
+</label>
+
+<button class="btn">تأكيد الطلب</button>
+
+</form>
+
+</div>
+
+<div class="sticky">
+🔥 اطلب الآن قبل ما يخلص الستوك
+</div>
+
+<script>
+function sendOrder(e){
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let wilaya=document.getElementById("wilaya").value;
+let address=document.getElementById("address").value;
+let upsell=document.getElementById("upsell").checked ? "مع upsell" : "بدون";
+
+let message=
+"طلب جديد:%0A"+
+"الاسم: "+name+"%0A"+
+"الهاتف: "+phone+"%0A"+
+"الولاية: "+wilaya+"%0A"+
+"العنوان: "+address+"%0A"+
+"Upsell: "+upsell;
+
+window.open("https://wa.me/213XXXXXXXXX?text="+message);
+}
+</script>
+
+</body>
+</html>
